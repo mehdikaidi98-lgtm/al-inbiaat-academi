@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Révisions 2AC – Al Inbiaat Academy</title>
+<style>
+:root{--bg:#eef2f9;--pn:#fff;--tx:#0f172a;--mu:#64748b;--bd:#e2e8f0;--ac:#7c3aed}
+[data-theme=dark]{--bg:#0b1020;--pn:#121a2e;--tx:#e8edf7;--mu:#93a0b8;--bd:#243049;--ac:#8b7cf8}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);line-height:1.6;font-family:Segoe UI,system-ui,Arial,sans-serif}
+[dir=rtl]{font-family:Tahoma,"Segoe UI",Arial,sans-serif}
+header{position:sticky;top:0;z-index:30;color:#fff;padding:12px 18px;background:linear-gradient(135deg,#2b2e6b,#7c3aed 50%,#d81b8c)}
+.top{max-width:1160px;margin:0 auto;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:9px;font-weight:800}.brand small{display:block;font-weight:500;font-size:.72rem;opacity:.9}
+.lg{width:44px;height:44px;border-radius:50%;background:#fff;object-fit:contain;padding:3px}.sp{flex:1}
+.search{position:relative}.search input{border:none;border-radius:9px;padding:8px 10px 8px 30px;min-width:150px;background:rgba(255,255,255,.2);color:#fff;outline:none}
+.search span{position:absolute;left:8px;top:50%;transform:translateY(-50%)}
+.chip{background:rgba(255,255,255,.2);padding:7px 11px;border-radius:9px;font-size:.8rem;font-weight:700;max-width:220px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ib{border:none;background:rgba(255,255,255,.2);color:#fff;border-radius:9px;padding:8px 11px;cursor:pointer;font-weight:700;font-size:.82rem}
+.ib:hover{background:rgba(255,255,255,.35)}
+.pw{max-width:1160px;margin:10px auto 0}.bar{height:8px;border-radius:99px;background:rgba(255,255,255,.28);overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,#facc15,#4ade80);transition:.4s}.pw small{font-size:.76rem}
+.lay{max-width:1160px;margin:20px auto 50px;padding:0 18px;display:grid;grid-template-columns:230px 1fr;gap:18px;align-items:start}
+nav{position:sticky;top:130px;display:flex;flex-direction:column;gap:5px;background:var(--pn);border:1px solid var(--bd);border-radius:15px;padding:9px}
+nav button{display:flex;gap:8px;align-items:center;border:none;background:none;color:var(--tx);padding:9px 10px;border-radius:10px;cursor:pointer;text-align:start;font-weight:700;font-size:.88rem;width:100%}
+nav button:hover{background:#7c3aed22}nav button.active{background:var(--ac);color:#fff}nav .dot{width:8px;height:8px;border-radius:50%;flex:none}
+.sec{background:var(--pn);border:1px solid var(--bd);border-radius:16px;padding:18px;margin-bottom:18px}
+.sh{display:flex;gap:10px;align-items:center;border-inline-start:5px solid var(--c);padding-inline-start:10px;margin-bottom:14px}
+.sh h2{margin:0;font-size:1.12rem}.pill{margin-inline-start:auto;background:var(--c);color:#fff;padding:3px 10px;border-radius:99px;font-size:.72rem;font-weight:800}
+.cards{display:grid;gap:11px}
+.card{border:1px solid var(--bd);border-radius:13px;overflow:hidden;background:var(--pn)}
+.ch{display:flex;gap:9px;align-items:center;padding:12px;cursor:pointer;flex-wrap:wrap}
+.ch h3{margin:0;font-size:.96rem;flex:1;min-width:120px}.cv{margin-inline-start:auto;transition:.25s;color:var(--mu)}
+.closed .cv{transform:rotate(-90deg)}.closed .cb{display:none}
+.bd2{padding:0 14px 15px;font-size:.93rem}.bd2 h4{margin:12px 0 3px;color:var(--c)}
+.bd2 ul{margin:.3em 0;padding-inline-start:19px}.bd2 b{color:var(--c)}
+.box{border-radius:10px;padding:9px 12px;margin:10px 0;font-size:.89rem;border-inline-start:4px solid}
+.box.tip{background:#ecfdf5;border-color:#10b981}.box.warn{background:#fef2f2;border-color:#ef4444}
+.box.ana{background:#eff6ff;border-color:#3b82f6}[data-theme=dark] .box.tip{background:#0d2a22}[data-theme=dark] .box.warn{background:#2a0f12}[data-theme=dark] .box.ana{background:#0e1c33}
+.badge{font-size:.66rem;font-weight:800;padding:2px 8px;border-radius:99px}.badge.h{background:#fee2e2;color:#b91c1c}.badge.d{background:#dcfce7;color:#15803d}
+.qh{margin:16px 0 9px;font-weight:800}.quiz{border:1px dashed var(--bd);border-radius:11px;padding:11px;margin-bottom:9px}
+.quiz .q{margin:0 0 8px;font-weight:700}.opts{display:flex;flex-wrap:wrap;gap:7px}
+.opt{border:1px solid var(--bd);background:none;color:var(--tx);padding:6px 12px;border-radius:8px;cursor:pointer;font-size:.88rem}
+.opt.ok{background:#16a34a;color:#fff;border-color:#16a34a}.opt.bad{background:#dc2626;color:#fff;border-color:#dc2626}
+.score{font-weight:800;color:var(--ac);margin:7px 0}
+.btn{border:none;background:linear-gradient(135deg,#7c3aed,#d81b8c);color:#fff;padding:10px 16px;border-radius:10px;cursor:pointer;font-weight:800;font-size:.88rem;margin-top:6px}
+.btn.gh{background:none;color:var(--ac);border:2px solid var(--ac)}.btn.dg{background:#dc2626}
+footer{text-align:center;color:var(--mu);font-size:.8rem;padding:20px}
+.lw{min-height:100vh;display:grid;place-items:center;padding:20px;background:linear-gradient(135deg,#2b2e6b,#7c3aed 50%,#d81b8c)}
+.lc{background:#fff;color:#0f172a;border-radius:20px;padding:28px;max-width:410px;width:100%;text-align:center;box-shadow:0 30px 70px #0006}
+.lc img{width:110px;height:110px;object-fit:contain;border-radius:50%}.lc h1{font-size:1.28rem;color:#2b2e6b;margin:6px 0 2px}.lc .s{color:#64748b;font-size:.84rem;margin:0 0 16px}
+.rt{display:flex;gap:6px;background:#f1f5f9;border-radius:11px;padding:4px;margin-bottom:16px}
+.rt button{flex:1;border:none;background:none;padding:8px;border-radius:8px;cursor:pointer;font-weight:800;color:#475569;font-size:.83rem}
+.rt button.on{background:linear-gradient(135deg,#7c3aed,#d81b8c);color:#fff}
+.lf{text-align:start;display:flex;flex-direction:column;gap:5px}.lf label{font-size:.78rem;font-weight:800;color:#334155;margin-top:5px}
+.lf input,.lf select{padding:10px;border:2px solid #e2e8f0;border-radius:9px;font-size:.93rem;outline:none}
+.hint{color:#94a3b8;font-size:.74rem;text-align:center;margin:6px 0 0}
+.ov{position:fixed;inset:0;background:#0f172a99;z-index:50;display:grid;place-items:start center;padding:20px;overflow:auto}
+.dash{background:var(--pn);color:var(--tx);border-radius:16px;max-width:1000px;width:100%}
+.dh{display:flex;justify-content:space-between;align-items:center;padding:16px 18px;background:linear-gradient(135deg,#2b2e6b,#7c3aed,#d81b8c);color:#fff;border-radius:16px 16px 0 0}
+.dh h2{margin:0;font-size:1.05rem}.dt{display:flex;gap:5px;padding:10px 14px 0;flex-wrap:wrap}
+.dt button{border:none;background:none;color:var(--mu);padding:8px 13px;border-radius:9px 9px 0 0;cursor:pointer;font-weight:800;font-size:.84rem}
+.dt button.on{background:var(--ac);color:#fff}.db{padding:16px 18px;max-height:70vh;overflow:auto}
+.tb{width:100%;border-collapse:collapse;font-size:.84rem;margin-bottom:12px}
+.tb th,.tb td{border-bottom:1px solid var(--bd);padding:7px 9px;text-align:start}.tb th{color:var(--mu);font-size:.76rem}
+.mini{border:none;border-radius:7px;padding:5px 9px;cursor:pointer;font-weight:700;margin-inline-end:4px;background:#7c3aed22;color:var(--ac)}
+.mini.d{background:#fee2e2;color:#b91c1c}
+.sw{position:relative;display:inline-block;width:42px;height:23px}.sw input{opacity:0;width:0;height:0}
+.sw i{position:absolute;inset:0;background:#cbd5e1;border-radius:99px;transition:.2s;cursor:pointer}
+.sw i:before{content:"";position:absolute;width:17px;height:17px;left:3px;top:3px;background:#fff;border-radius:50%;transition:.2s}
+.sw input:checked+i{background:#16a34a}.sw input:checked+i:before{transform:translateX(19px)}
+.form{display:flex;flex-direction:column;gap:5px;max-width:620px}.form label{font-size:.8rem;font-weight:800;margin-top:7px}
+.form input,.form textarea,.form select{padding:9px;border:2px solid var(--bd);border-radius:9px;background:var(--pn);color:var(--tx);font-family:inherit;font-size:.88rem;outline:none}
+.form code{background:#7c3aed22;padding:1px 5px;border-radius:5px;font-size:.78rem}
+.stats{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:16px}
+.stat{background:#7c3aed1a;border-radius:12px;padding:12px 18px;text-align:center;min-width:100px}
+.stat b{display:block;font-size:1.6rem;color:var(--ac)}.stat span{font-size:.76rem;color:var(--mu)}
+@media(max-width:840px){.lay{grid-template-columns:1fr}nav{position:static;flex-direction:row;overflow-x:auto;top:auto}nav button{width:auto;white-space:nowrap}}
+</style></head><body>
+<div id="root"></div>
+<script>
+const LS={g:(k,d)=>{try{const v=JSON.parse(localStorage.getItem(k));return v==null?d:v}catch(e){return d}},s:(k,v)=>localStorage.setItem(k,JSON.stringify(v))};
+const S=[
+{m:"Mathématiques",e:"📐",l:"fr",c:"#2563eb",k:[
+{t:"Les nombres relatifs",i:"Imagine un ascenseur 🛗 : au-dessus du sol +, en dessous −.",b:`<h4>Comparer</h4>Plus à droite = plus grand : −2 &lt; 0 &lt; 3.<h4>Addition</h4>Mêmes signes : on additionne et on garde le signe. Signes différents : on soustrait et on garde le signe du plus fort.<h4>Soustraction</h4>a−b=a+(−b).<h4>× / ÷</h4>(+)×(+)=+ ; (−)×(−)=+ ; (+)×(−)=−.<div class="box warn">⚠️ −3²=−9 mais (−3)²=+9.</div>`,q:[["(−5)+(+8) = ?",["3","−3","13","−13"],0],["(−7)−(−2) = ?",["−9","−5","5","9"],1],["(−4)×(−3) = ?",["−12","12","−7","7"],1],["Le plus petit :",["−8","−2","0","3"],0],["(−20)÷(+4) = ?",["5","−5","−16","16"],1]]},
+{t:"Puissances et notation scientifique",i:"2×2×2×2×2 s'écrit 2⁵. Fini les zéros !",b:`<h4>Définition</h4>aⁿ = a×a×… (n fois) ; a⁰=1.<h4>Propriétés</h4>aᵐ×aⁿ=aᵐ⁺ⁿ ; aᵐ÷aⁿ=aᵐ⁻ⁿ ; (aᵐ)ⁿ=aᵐˣⁿ.<h4>Notation</h4>a×10ⁿ avec 1≤a&lt;10. Ex : 45000=4,5×10⁴.`,q:[["2⁵ = ?",["10","25","32","16"],2],["a³×a² = ?",["a⁶","a⁵","a⁹","a"],1],["10⁰ = ?",["0","1","10","100"],1],["0,0045 = ?",["4,5×10⁻³","45×10⁻⁴","4,5×10³","0,45×10⁻²"],0],["(10²)³ = ?",["10⁵","10⁶","10⁸","10⁹"],1]]},
+{t:"Calcul littéral",i:"Les lettres remplacent les nombres. Développer/factoriser.",b:`<h4>Développer</h4>k(a+b)=ka+kb.<h4>Identités ⭐</h4>(a+b)²=a²+2ab+b² ; (a−b)²=a²−2ab+b² ; (a−b)(a+b)=a²−b².<h4>Factoriser</h4>3x+6=3(x+2).<div class="box warn">⚠️ (a+b)² ≠ a²+b².</div>`,q:[["(x+5)² = ?",["x²+25","x²+10x+25","x²+5x+25","x²−25"],1],["(a−b)(a+b) = ?",["a²+b²","a²−b²","a²−2ab+b²","2ab"],1],["3(2x+4) = ?",["6x+4","6x+12","5x+7","6x−12"],1],["x²−9 = ?",["(x−3)(x+3)","(x−9)(x+1)","x(x−9)","(x−3)²"],0],["(2x−1)² = ?",["4x²+1","4x²−4x+1","4x²−1","2x²−4x+1"],1]]},
+{t:"Théorème de Pythagore",i:"La règle d'or des triangles rectangles 📐.",b:`<h4>Théorème</h4>Rectangle en A : BC²=AB²+AC² (BC=hypoténuse).<h4>Réciproque</h4>Si BC²=AB²+AC² alors rectangle en A.`,q:[["L'hypoténuse est :",["le plus petit côté","face à l'angle droit","un côté de l'angle droit","la somme"],1],["AB=6, AC=8 : BC= ?",["10","14","48","100"],0],["Pythagore :",["BC²=AB²−AC²","BC²=AB²+AC²","BC=AB+AC","BC=AB×AC"],1],["Si BC²=AB²+AC² :",["isocèle","équilatéral","rectangle en A","quelconque"],2],["AB=5, BC=13 : AC= ?",["8","12","18","144"],1]]},
+{t:"Équations du premier degré",i:"Une équation est une balance ⚖️ : ce qu'on fait d'un côté, on le fait de l'autre.",b:`<h4>Résoudre ax+b=c</h4>On isole x : soustraire b puis diviser par a (a≠0). Ex : 2x+3=11 → x=4.<h4>Vérification</h4>Remplacer x par la valeur trouvée.<div class="box warn">⚠️ On ne divise jamais par 0.</div>`,q:[["3x=12 → x = ?",["3","4","9","36"],1],["x+5=2 → x = ?",["−3","3","7","−7"],0],["2x−4=0 → x = ?",["−2","2","4","0"],1],["Une équation est :",["une inégalité","une égalité avec inconnue","un produit","une fraction"],1],["5x+1=16 → x = ?",["2","3","4","5"],1]]},
+{t:"Proportionnalité et pourcentages",i:"Une recette double si on double les quantités.",b:`<h4>Proportionnalité</h4>y=k×x.<h4>Pourcentages</h4>p% de N = N×p÷100 ; +20% = ×1,20 ; −20% = ×0,80.<h4>Vitesse</h4>v=d÷t.`,q:[["15% de 200 = ?",["15","30","20","45"],1],["+10% = ×",["0,10","1,10","10","0,90"],1],["v = ?",["d×t","d÷t","t÷d","d+t"],1],["3 kg = 12 DH ; 5 kg ?",["15","20","18","24"],1],["−25% = ×",["1,25","0,75","0,25","1,75"],1]]},
+{t:"Théorème de Thalès",i:"Thalès relie les longueurs quand deux droites sont parallèles.",b:`<h4>Configuration</h4>Si (BC)//(MN) : AM/AB=AN/AC=MN/BC.<h4>Droite des milieux</h4>Parallèle au 3ᵉ côté et vaut sa moitié.<div class="box warn">⚠️ Il faut des parallèles.</div>`,q:[["Thalès nécessite :",["un angle droit","des parallèles","un cercle","une médiane"],1],["AM/AB=1/2 → M est",["un sommet","le milieu","n'importe où","à l'extérieur"],1],["Droite des milieux = moitié du",["côté adjacent","3ᵉ côté","périmètre","rayon"],1],["Réciproque sert à",["prouver le parallélisme","calculer une aire","tracer un cercle","rien"],0],["AM/AB = MN/BC :",["faux","vrai","parfois","jamais"],1]]},
+{t:"Statistiques",i:"Résumer une série de données.",b:`<h4>Moyenne</h4>somme ÷ effectif total.<h4>Médiane</h4>partage la série ordonnée en deux.<h4>Fréquence</h4>effectif ÷ effectif total.`,q:[["Moyenne de 4,6,8 :",["6","7","5","18"],0],["Médiane de 1,3,5,7 :",["3","4","5","6"],1],["Fréquence =",["effectif÷total","total÷effectif","somme","moyenne"],0],["Moyenne de 10 et 20 :",["15","30","10","20"],0],["Médiane sur série :",["ordonnée","au hasard","inversée","sans ordre"],0]]},
+{t:"Angles et droites parallèles",i:"Deux parallèles coupées par une sécante créent des angles égaux.",b:`<h4>Alternes-internes</h4>Égaux si parallèles.<h4>Correspondants</h4>Égaux aussi.<h4>Sommes</h4>Supplémentaires=180° ; complémentaires=90°.<div class="box tip">💡 Triangle : 180°.</div>`,q:[["Complémentaires :",["90°","180°","360°","45°"],0],["Supplémentaires :",["90°","180°","270°","0°"],1],["Alternes-internes (parallèles) :",["égaux","différents","supplémentaires","nuls"],0],["Triangle :",["90°","180°","360°","270°"],1],["Angle droit :",["45°","90°","180°","60°"],1]]},
+{t:"Triangles et droites remarquables",i:"Chaque triangle cache des droites spéciales.",b:`<h4>Droites</h4>Médiane, médiatrice, hauteur, bissectrice.<h4>Rectangle</h4>Le cercle circonscrit a pour diamètre l'hypoténuse.`,q:[["La médiane va vers :",["le milieu du côté opposé","un angle","le centre","l'extérieur"],0],["La médiatrice est :",["parallèle","perpendiculaire au milieu","une hauteur","une bissectrice"],1],["Triangle :",["90°","180°","360°","100°"],1],["Cercle circonscrit : diamètre =",["un côté de l'angle droit","l'hypoténuse","la médiane","la hauteur"],1],["La hauteur est :",["parallèle au côté","perpendiculaire au côté","égale à la médiane","une bissectrice"],1]]},
+{t:"Symétrie axiale et centrale",i:"La symétrie, c'est comme un miroir.",b:`<h4>Axiale</h4>Réflexion par rapport à une droite (axe).<h4>Centrale</h4>Rotation de 180° autour d'un point.<h4>Propriétés</h4>Conserve longueurs, angles et aires.`,q:[["Symétrie axiale : par rapport à",["un point","une droite","un cercle","un triangle"],1],["Centrale = rotation de",["90°","180°","360°","45°"],1],["Une symétrie conserve :",["les longueurs","le hasard","rien","les couleurs"],0],["Image d'un segment :",["même longueur","plus grand","plus petit","un point"],0],["Carré = combien d'axes ?",["1","2","3","4"],3]]},
+{t:"Aires, périmètres et volumes",i:"Calculer l'espace occupé et le contour.",b:`<h4>Aires</h4>Rectangle L×l ; triangle (b×h)÷2 ; disque πr².<h4>Périmètres</h4>Rectangle 2(L+l) ; cercle 2πr.<h4>Volumes</h4>Pavé L×l×h ; cylindre πr²h.`,q:[["Aire rectangle 5×3 :",["8","15","16","2"],1],["Aire triangle 6,4 :",["24","12","10","6"],1],["Périmètre cercle r=2 :",["2π","4π","π²","8π"],1],["Volume pavé 2×3×4 :",["9","24","12","6"],1],["Aire du disque :",["2πr","πr²","πd","r²"],1]]},
+{t:"Les fractions",i:"Une fraction, c'est une part du tout.",b:`<h4>Comparer</h4>Même dénominateur : on compare les numérateurs.<h4>Opérations</h4>Addition : dénominateur commun.<h4>Simplifier</h4>Diviser haut et bas par un même nombre.`,q:[["2/3 + 1/3 = ?",["3/6","1","3/3","2/3"],1],["6/8 simplifié :",["3/4","2/3","6/8","1/2"],0],["3/5 et 4/5 :",["3/5 plus grand","4/5 plus grand","égales","impossible"],1],["1/2 + 1/4 = ?",["2/6","3/4","1/6","2/4"],1],["2/3 × 3/4 = ?",["1/2","5/7","6/7","2/4"],0]]},
+{t:"Racines carrées",i:"La racine carrée, c'est l'inverse du carré.",b:`<h4>Définition</h4>√a = nombre positif dont le carré est a. √9=3.<h4>Propriétés</h4>√(a×b)=√a×√b.<h4>Carrés parfaits</h4>1,4,9,16,25,36,49,64,81,100.`,q:[["√25 = ?",["5","12,5","625","10"],0],["√(9×4) = ?",["6","13","36","9"],0],["√81 = ?",["8","9","18","40"],1],["Carré parfait :",["10","16","20","24"],1],["√100 = ?",["10","50","100","20"],0]]}
+]},
+{m:"Physique-Chimie",e:"⚗️",l:"fr",c:"#0891b2",k:[
+{t:"L'eau et ses états",i:"L'eau existe sous 3 formes : glace 🧊, liquide 💧, vapeur ☁️.",b:`<h4>3 états</h4>Solide (forme+volume), liquide (volume), gaz (rien de propre).<h4>Changements</h4>Fusion, solidification, vaporisation, liquéfaction, sublimation.<h4>Températures</h4>Fusion 0 °C, ébullition 100 °C.`,q:[["Liquide→gaz :",["fusion","solidification","vaporisation","liquéfaction"],2],["L'eau bout à :",["0°C","50°C","100°C","200°C"],2],["Un gaz a :",["forme propre","volume propre","ni forme ni volume","tout"],2],["Glace fond à :",["0°C","4°C","100°C","−10°C"],0],["Gaz→liquide :",["fusion","liquéfaction","sublimation","solidification"],1]]},
+{t:"Mélanges et corps purs",i:"Eau sucrée = mélange ; eau distillée = corps pur.",b:`<h4>Homogène/hétérogène</h4>Une phase / plusieurs phases.<h4>Corps pur</h4>Une seule substance.<h4>Séparations</h4>Décantation, filtration, distillation, évaporation.`,q:[["Eau+sable :",["homogène","hétérogène","pur","gaz"],1],["Eau+sel :",["homogène","hétérogène","pur","solide"],0],["Séparer eau/sable :",["distillation","filtration","évaporation","sublimation"],1],["Corps pur :",["plusieurs substances","une seule","toujours l'eau","un mélange"],1],["Récupérer le sel :",["distillation","filtration","évaporation","décantation"],2]]},
+{t:"L'air et la combustion",i:"Sans air, pas de feu.",b:`<h4>Composition</h4>≈78 % N₂, 21 % O₂.<h4>Combustion</h4>Combustible + O₂ + chaleur.<h4>Produits</h4>CO₂ (eau de chaux troublée) + eau.<div class="box warn">⚠️ Manque d'O₂ → CO, mortel.</div>`,q:[["78% de :",["O₂","N₂","CO₂","argon"],1],["Le comburant :",["le bois","le dioxygène","l'eau","le CO₂"],1],["Tester le CO₂ :",["eau de chaux trouble","pH","aimant","thermomètre"],0],["Triangle du feu :",["combustible+O₂+chaleur","eau+air","2 combustibles","rien"],0],["Gaz dangereux :",["CO₂","O₂","CO","N₂"],2]]},
+{t:"Le circuit électrique",i:"Une pile, une lampe : la lumière s'allume 💡.",b:`<h4>Circuit</h4>Boucle fermée.<h4>Série/dérivé</h4>Série : un chemin ; dérivé : branches.<h4>Grandeurs</h4>I (A), U (V), R (Ω).<div class="box tip">💡 Série : U=U₁+U₂.</div>`,q:[["Intensité en :",["volt","ampère","ohm","watt"],1],["Ampèremètre :",["en dérivé","en série","à la terre","nulle part"],1],["Circuit série :",["un chemin","plusieurs","aucun","deux générateurs"],0],["Unité tension :",["ampère","volt","ohm","joule"],1],["U=U₁+U₂ en :",["série","dérivé","toujours","jamais"],0]]}
+]},
+{m:"SVT",e:"🧬",l:"fr",c:"#16a34a",k:[
+{t:"L'alimentation",i:"Manger = donner du carburant au corps ⛽.",b:`<h4>Nutriments</h4>Glucides (énergie), lipides (réserve), protides (construction), vitamines/sels/eau.<h4>Équilibre</h4>Repas variés.`,q:[["Protides :",["énergie","construire","transporter O₂","refroidir"],1],["Pain riche en :",["protides","lipides","glucides","vitamines"],2],["Carence en vitamines :",["maladie","fatigue seule","rien","obésité"],0],["Aliment composé :",["sucre","lait","eau","sel"],1],["Lipides = réserve :",["sang","eau","énergie","vitamines"],2]]},
+{t:"La digestion",i:"Ton sandwich 🥪 devient des nutriments.",b:`<h4>Deux digestions</h4>Mécanique (dents, brassage) et chimique (sucs).<h4>Trajet</h4>Bouche→œsophage→estomac→intestin grêle→gros intestin.<h4>Absorption</h4>Intestin grêle (villosités).`,q:[["Début :",["estomac","bouche","intestin","œsophage"],1],["Absorption :",["estomac","intestin grêle","gros intestin","bouche"],1],["Sucs = digestion :",["mécanique","chimique","aucune","électrique"],1],["Nutriments dans :",["l'air","le sang","les os","les nerfs"],1],["Trajet :",["bouche→estomac→œsophage","bouche→œsophage→estomac→intestin","estomac→bouche","intestin→estomac"],1]]},
+{t:"Respiration et circulation",i:"Oxygène 🌬️ + sang ❤️.",b:`<h4>Respiration</h4>Alvéoles : O₂ entre, CO₂ sort.<h4>Circulation</h4>Cœur 4 cavités ; double circulation.<h4>Sang</h4>Plasma + globules rouges/blancs + plaquettes.`,q:[["Échanges dans :",["trachée","alvéoles","nez","cœur"],1],["Le cœur a :",["2 cavités","3","4","5"],2],["O₂ transporté par :",["blancs","plaquettes","rouges","plasma"],2],["Respiration libère :",["énergie","eau seule","sucre","os"],0],["Blancs =",["O₂","défendre","coaguler","rien"],1]]},
+{t:"Séismes et volcans",i:"La Terre bouge 🌍.",b:`<h4>Séismes</h4>Plaques ; foyer/épicentre ; Richter.<h4>Volcans</h4>Magma→lave ; effusive/explosive.<h4>Prévention</h4>Construction parasismique.`,q:[["Échelle :",["Celsius","Richter","Beaufort","Mercure"],1],["Origine profonde :",["épicentre","foyer","cratère","faille"],1],["La lave :",["magma en surface","de l'eau","du sable","du gaz"],0],["Séismes =",["nuages","plaques","rivières","vents"],1],["Prévention :",["parasismique","ignorer","fermer les écoles","rien"],0]]}
+]},
+{m:"Français",e:"📚",l:"fr",c:"#7c3aed",k:[
+{t:"Types et formes de phrases",i:"Chaque phrase a un type et une forme.",b:`<h4>4 types</h4>Déclarative, interrogative, exclamative, impérative.<h4>Formes</h4>Affirmative/négative, active/passive.`,q:[["Déclarative ?",["Ferme la porte !","Tu viens ?","Le ciel est bleu.","Quel dommage !"],2],["Ordre :",["déclarative","impérative","interrogative","exclamative"],1],["Négation de « Il mange. » :",["Il ne mange pas.","Il mange pas.","Mange-t-il ?","Il mange !"],0],["« Comme c'est beau ! » :",["déclarative","interrogative","exclamative","impérative"],2],["Passive :",["Le chat mange la souris.","La souris est mangée par le chat.","Mange la souris.","La souris court."],1]]},
+{t:"Imparfait et passé simple",i:"La différence change le sens du récit !",b:`<h4>Imparfait</h4>Description, habitude, décor.<h4>Passé simple</h4>Action ponctuelle terminée.`,q:[["Imparfait :",["action ponctuelle","description","futur","ordre"],1],["Passé simple :",["action terminée","habitude","description","conseil"],0],["« Il mangeait » :",["présent","imparfait","passé simple","futur"],1],["Imparfait à « nous » :",["-ons","-ions","-ez","-ez"],1],["« Soudain il partit » :",["imparfait","passé simple","présent","futur"],1]]},
+{t:"Les compléments circonstanciels",i:"Où ? quand ? comment ? pourquoi ?",b:`<h4>Principaux</h4>Lieu, temps, manière, cause, but.<h4>Astuce</h4>Déplaçables et supprimables.<div class="box warn">⚠️ ≠ COD/COI (essentiels).</div>`,q:[["« Dans la cour » :",["temps","lieu","manière","but"],1],["« Hier » :",["lieu","temps","cause","manière"],1],["Un CC est :",["supprimable","essentiel","obligatoire","sujet"],0],["« pour gagner » :",["cause","but","lieu","temps"],1],["Le COD est :",["supprimable","essentiel","mobile","facultatif"],1]]},
+{t:"Le récit et la description",i:"Raconter avance, décrire s'arrête.",b:`<h4>Récit</h4>Situation initiale → perturbateur → péripéties → dénouement → finale.<h4>Description</h4>Verbes d'état, adjectifs, 5 sens.`,q:[["Début :",["dénouement","situation initiale","péripéties","élément perturbateur"],1],["Description :",["passé simple","verbes d'état","ordres","questions"],1],["La description :",["accélère","ralentit","arrête tout","n'existe pas"],1],["Perturbateur :",["clôt","déclenche","décrit","rien"],1],["On décrit à :",["l'imparfait","le futur","l'impératif","le passé simple"],0]]}
+]},
+{m:"Anglais",e:"🇬🇧",l:"en",c:"#dc2626",k:[
+{t:"Present Simple vs Continuous",i:"'I work' ou 'I am working' ?",b:`<h4>Simple</h4>Habits. He works. − He doesn't work. ? Does he work?<h4>Continuous</h4>Now : is/are + V-ing. She is reading.`,q:[["She ___ coffee every morning.",["drink","drinks","drinking","is drinking"],1],["Look! The baby ___.",["sleeps","sleep","is sleeping","slept"],2],["He ___ TV now.",["watches","watch","is watching","watched"],2],["I usually ___ at 7.",["get up","am getting up","got up","gets up"],0],["= Present Simple :",["now","at the moment","always","look"],2]]},
+{t:"Past Simple",i:"Yesterday, last week… finished actions!",b:`<h4>Regular</h4>+ed. <h4>Irregular</h4>go→went, see→saw, do→did.<h4>Négatif/question</h4>didn't + V ; Did + sujet + V ?`,q:[["She ___ to school yesterday.",["go","goes","went","going"],2],["I ___ my homework last night.",["do","did","done","doing"],1],["___ you see the film?",["Do","Did","Are","Was"],1],["He ___ come yesterday.",["didn't","doesn't","isn't","wasn't"],0],["Past of 'see':",["seed","saw","seen","sawed"],1]]},
+{t:"Comparatives & Superlatives",i:"Who is taller? Who is the tallest?",b:`<h4>Courts</h4>+er / the +est.<h4>Longs</h4>more / the most.<h4>Irréguliers</h4>good→better→best ; bad→worse→worst.`,q:[["Comparative of 'big':",["bigger","more big","biger","the biggest"],0],["Superlative of 'good':",["goodest","the best","better","most good"],1],["'Beautiful' comparative:",["beautifuller","more beautiful","most beautiful","beautifuler"],1],["Après comparatif :",["than","that","then","as"],0],["'Bad' comparative:",["badder","worse","worst","more bad"],1]]},
+{t:"Future & Modals",i:"Tomorrow I will… or I am going to…?",b:`<h4>will + V</h4>Prédiction.<h4>going to</h4>Plan.<h4>Modals</h4>can, must, should ; jamais de -s.`,q:[["I ___ visit my grandma tomorrow.",["am going to","go","went","going"],0],["She ___ speak 3 languages.",["can","cans","can to","is can"],0],["You ___ study (conseil).",["must","should","can","will"],1],["It ___ rain (prédiction).",["is going to","will","goes","went"],1],["'must' exprime :",["capacité","obligation","conseil","passé"],1]]}
+]},
+{m:"اللغة العربية",e:"📖",l:"ar",c:"#0d9488",k:[
+{t:"الجملة الاسمية والفعلية",i:"كل جملة إما اسمية أو فعلية.",b:`<h4>الاسمية</h4>مبتدأ + خبر : العلمُ نورٌ.<h4>الفعلية</h4>فعل + فاعل + مفعول : كَتَبَ التلميذُ الدرسَ.`,q:[["«العلمُ نورٌ»:",["فعلية","اسمية","شرطية","استفهامية"],1],["الفاعل في «فهمَ التلميذُ»:",["فهم","التلميذ","الدرس","لا فاعل"],1],["المبتدأ في «المؤمنُ قويٌّ»:",["المؤمن","قوي","لا مبتدأ","جملة"],0],["الفعلية تبدأ بـ:",["اسم","فعل","حرف","ضمير"],1],["المفعول به في:",["الاسمية","الفعلية المتعدية","لا يوجد","دائماً"],1]]},
+{t:"الفعل: الماضي والمضارع والأمر",i:"الأفعال ثلاثة: ماضٍ، مضارع، أمر.",b:`<h4>الماضي</h4>مبني على الفتح غالباً.<h4>المضارع</h4>مرفوع إلا بعد ناصب أو جازم.<h4>الأمر</h4>مبني: اكتبْ.<h4>النواصب/الجوازم</h4>أنْ، لنْ / لمْ.`,q:[["«يذهبُ»:",["ماضٍ","مضارع","أمر","جامد"],1],["«اكتبْ»:",["ماضٍ","مضارع","أمر","ناقص"],2],["أداة تجزم:",["أنْ","لمْ","كي","سوف"],1],["الماضي مبني على:",["السكون","الفتح","الضم","الكسر"],1],["أداة تنصب:",["لمْ","لنْ","لا الناهية","هل"],1]]},
+{t:"الأساليب",i:"سؤال، نفي، تعجب، تمنٍّ…",b:`<h4>الاستفهام</h4>هل، ما، لماذا، كيف.<h4>النفي</h4>لم (مضارع)، لن (مستقبل)، ما، لا.<h4>التعجب/التمني</h4>ما أجملَ! / ليت.`,q:[["«هل» أداة:",["نفي","استفهام","تعجب","تمنٍّ"],1],["«لن يفوزَ»:",["تمنٍّ","نفي المستقبل","استفهام","تعجب"],1],["«ليت» تفيد:",["التمني","النفي","الاستفهام","الأمر"],0],["نفي الماضي بـ:",["لن","لم","لا الناهية","هل"],1],["«أين تذهب؟»:",["نفي","استفهام","تمنٍّ","تعجب"],1]]},
+{t:"النعت والحال",i:"النعت صفة الموصوف، والحال هيئة صاحبه.",b:`<h4>النعت</h4>يتبع المنعوت في الإعراب والتعريف والعدد.<h4>الحال</h4>منصوب، يبين الهيئة.`,q:[["النعت يتبع المنعوت في:",["الإعراب فقط","الإعراب والتعريف والعدد","لا شيء","الفعل"],1],["«التلميذُ النشيطُ»: النشيطُ:",["مبتدأ","نعت","حال","خبر"],1],["الحال غالباً:",["مرفوع","منصوب","مجرور","مبني"],1],["«عاد مسروراً»: مسروراً:",["نعت","حال","فاعل","مفعول"],1],["تجد الحال بسؤال:",["ماذا؟","كيف؟","أين؟","متى؟"],1]]}
+]},
+{m:"الاجتماعيات",e:"🗺️",l:"ar",c:"#ca8a04",k:[
+{t:"العالم الإسلامي: الامتداد",i:"من مكة انتشر الإسلام شرقاً وغرباً.",b:`<h4>الامتداد</h4>من الأندلس إلى ما وراء النهر.<h4>العوامل</h4>الفتوحات، التجارة، التسامح.`,q:[["امتد إلى:",["أمريكا","الأندلس","أستراليا","اليابان"],1],["من العوامل:",["الفتوحات","الحروب الأهلية","العزلة","الجفاف"],0],["من المدن:",["باريس","بغداد","لندن","روما"],1],["علوم:",["الطب والفلك","الطيران","السينما","الكهرباء"],0],["انتشر بـ:",["التجارة","الهجرة فقط","لا شيء","الزلازل"],0]]},
+{t:"المغرب في العصر الوسيط",i:"فاس ومراكش: مدن دول عظيمة.",b:`<h4>الدول</h4>الأدارسة (فاس)، المرابطون (مراكش)، الموحدون، المرينيون.<h4>المظاهر</h4>المدن والمساجد والتجارة الصحراوية.`,q:[["أول دولة:",["المرابطون","الأدارسة","الموحدون","المرينيون"],1],["عاصمة الأدارسة:",["مراكش","فاس","الرباط","طنجة"],1],["المرابطون أسسوا:",["فاس","مراكش","وجدة","تطوان"],1],["مؤسس الأدارسة:",["إدريس الأول","يوسف بن تاشفين","عبد المؤمن","المرينيون"],0],["التجارة عبر:",["البحر فقط","الصحراء","الجو","لا شيء"],1]]},
+{t:"موقع المغرب وتضاريسه",i:"جبال، سهول، صحراء وبحران 🌊.",b:`<h4>الموقع</h4>شمال غرب إفريقيا.<h4>التضاريس</h4>الريف والأطلس، السهول، الصحراء.<div class="box tip">💡 أعلى قمة: توبقال (4167م).</div>`,q:[["أعلى قمة:",["توبقال","الريف","الأطلس المتوسط","تسوكال"],0],["توبقال في:",["الريف","الأطلس الكبير","المتوسط","السهول"],1],["غرباً يطل على:",["المتوسط","الأطلسي","القطب","الأحمر"],1],["سهل خصب:",["سايس","توبقال","الصحراء","الريف"],0],["الصحراء:",["شمالاً","جنوباً","شرقاً","غرباً"],1]]},
+{t:"السكان والتنمية",i:"توزيع متفاوت للسكان.",b:`<h4>التوزيع</h4>تركز في السهول والسواحل.<h4>العوامل</h4>المناخ، العمل، الماء.<h4>التنمية</h4>IDH = تعليم + صحة + دخل.`,q:[["يتركز في:",["الصحراء","السهول والسواحل","الجبال فقط","لا مكان"],1],["من العوامل:",["المناخ","الزلازل","لا شيء","الجفاف"],0],["IDH يقيس:",["التعليم والصحة والدخل","الحرارة","المطر","الجبال"],0],["أكبر مدينة:",["الرباط","الدار البيضاء","مراكش","فاس"],1],["الصحراء:",["كثيفة","قليلة السكان","متوسطة","لا سكان"],1]]}
+]},
+{m:"التربية الإسلامية",e:"🕌",l:"ar",c:"#059669",k:[
+{t:"القرآن الكريم والتفسير",i:"القرآن كلام الله، محفوظ في الصدور والسطور.",b:`<h4>القرآن</h4>كلام الله على النبي ﷺ.<h4>آداب التلاوة</h4>الطهارة، التجويد، التدبر.<h4>التفسير</h4>شرح المعاني والعبر.`,q:[["القرآن كلام:",["النبي","الله","الملائكة","الناس"],1],["أول ما نزل:",["الفاتحة","اقرأ","الناس","الكوثر"],1],["من الآداب:",["الطهارة","الكلام","الضحك","الأكل"],0],["التفسير:",["شرح المعاني","الحفظ","الكتابة","الرسم"],0],["التجويد يخص:",["التلاوة","المعاملة","البيع","السفر"],0]]},
+{t:"الحديث النبوي",i:"«إنما الأعمال بالنيات»: كنوز تربوية.",b:`<h4>الحديث</h4>قول أو فعل أو تقرير.<h4>أنواعه</h4>صحيح، حسن، ضعيف.<h4>الفائدة</h4>يشرح القرآن ويربي.`,q:[["الحديث يشمل:",["القول والفعل والإقرار","الشعر","الرسم","الغناء"],0],["الصحيح:",["قوي الثبوت","الضعيف","الموضوع","المجهول"],0],["وظيفة السنة:",["شرح القرآن","نسخه","تحريفه","إلغاؤه"],0],["حديث النية في:",["النية","البيع","الصلاة فقط","الحج"],0],["السنة مصدر:",["تشريعي","رياضي","فني","لا شيء"],0]]},
+{t:"العقيدة: الإيمان بالله",i:"الإيمان أساس الدين وبه تطمئن القلوب.",b:`<h4>التوحيد</h4>الله واحد أحد.<h4>الأسماء والصفات</h4>الرحمن، العليم، القادر.<h4>الأثر</h4>الطمأنينة والاستقامة.`,q:[["الله:",["واحد لا شريك له","اثنان","ثلاثة","كثير"],0],["من الأسماء:",["الرحيم","الكريم فقط","لا شيء","النبات"],0],["الإيمان يورث:",["الطمأنينة","القلق","الخوف","الكراهية"],0],["أساس التوحيد:",["لا إله إلا الله","الشعر","الغناء","السفر"],0],["الله:",["العليم","الجاهل","العاجز","الغافل"],0]]},
+{t:"الفقه: الطهارة والصلاة",i:"الطهارة مفتاح الصلاة.",b:`<h4>الطهارة</h4>الوضوء، الغسل، التيمم.<h4>الصلاة</h4>الأركان والشروط: الطهارة، الوقت، القبلة.<div class="box tip">💡 5 صلوات.</div>`,q:[["الطهارة بـ:",["الوضوء","النوم","الأكل","اللعب"],0],["التيمم عند:",["فقد الماء","دائماً","الليل فقط","لا يُشرع"],0],["الصلوات المفروضة:",["3","4","5","6"],2],["الصلاة تبطل بـ:",["الكلام","السكوت","الخشوع","القراءة"],0],["من الشروط:",["الطهارة","الضحك","الأكل","الكلام"],0]]}
+]},
+{m:"Informatique",e:"💻",l:"fr",c:"#0f766e",k:[
+{t:"L'ordinateur et ses composants",i:"Le matériel est le squelette, les logiciels l'esprit.",b:`<h4>Matériel</h4>Unité centrale, écran, clavier ; périphériques.<h4>Logiciel</h4>Système d'exploitation + applications.`,q:[["Le clavier est :",["sortie","entrée","stockage","interne"],1],["L'écran est :",["entrée","sortie","stockage","système"],1],["Un logiciel est :",["un programme","du métal","un câble","un écran"],0],["Matériel en anglais :",["software","hardware","freeware","malware"],1],["Windows est un :",["système d'exploitation","écran","clavier","jeu"],0]]},
+{t:"Le système d'exploitation",i:"Le chef d'orchestre 🎼 de ton ordinateur.",b:`<h4>Rôle</h4>Gère matériel et fichiers.<h4>Bureau</h4>Icônes, fenêtres, corbeille.<h4>Fichiers</h4>Nom + extension.`,q:[["Le système :",["gère le matériel","dessine","imprime seul","rien"],0],["La corbeille sert à :",["supprimer","imprimer","éteindre","dessiner"],0],["Image = extension :",[".txt",".jpg",".docx",".exe"],1],["Un dossier :",["contient des fichiers","est un clavier","est un écran","est un virus"],0],["Le système se lance :",["avant les apps","après","jamais","au hasard"],0]]},
+{t:"Internet et sécurité",i:"Internet c'est génial… mais protège-toi !",b:`<h4>Vocabulaire</h4>Navigateur, moteur de recherche, URL.<h4>Dangers</h4>Virus, phishing, cyberharcèlement.<h4>Protection</h4>Mot de passe fort, antivirus.`,q:[["Google est un :",["navigateur","moteur de recherche","antivirus","réseau"],1],["Un URL est :",["une adresse web","un virus","un écran","un clavier"],0],["Le phishing est :",["une arnaque","un jeu","un moteur","un écran"],0],["Bon mot de passe :",["fort et unique","'1234'","partagé","ton nom"],0],["Firefox est un :",["navigateur","moteur","virus","écran"],0]]},
+{t:"Initiation à l'algorithmique",i:"Un algorithme = une recette 🍳 pour l'ordinateur.",b:`<h4>Définition</h4>Suite finie d'instructions.<h4>Structure</h4>Entrée→Traitement→Sortie.<h4>Base</h4>Variable, condition, boucle.`,q:[["Un algorithme est :",["une suite d'instructions","un écran","un fichier","un virus"],0],["Structure :",["Entrée→Traitement→Sortie","Sortie→Entrée","rien","hasard"],0],["Une variable :",["stocke une valeur","dessine","imprime","rien"],0],["Une condition :",["si…alors","jamais","toujours","la souris"],0],["Une boucle :",["répète","dessine","éteint","rien"],0]]}
+]}
+];
+function seed(){const o=[];S.forEach(s=>s.k.forEach((l,i)=>o.push({id:(s.m+'_'+i).replace(/\s/g,'_'),mat:s.m,icon:s.e,color:s.c,lang:s.l,t:l.t,intro:l.i,body:l.b,quiz:l.q.map(x=>({q:x[0],o:x[1],a:x[2]})),visible:true})));return o}
+const VER=5;let L=LS.g('aia_lessons',null);
+if(!L||LS.g('aia_ver',0)<VER){L=seed();LS.s('aia_lessons',L);LS.s('aia_ver',VER)}
+let logs=LS.g('aia_logs',[]),studs=LS.g('aia_students',[]),prog=LS.g('aia_progress',{}),sess=LS.g('aia_session',null);
+let loginRole='eleve',dashTab=null;
+const ALLSUBJ=["Mathématiques","Physique-Chimie","SVT","Français","Anglais","اللغة العربية","الاجتماعيات","التربية الإسلامية","Informatique"];
+const $=i=>document.getElementById(i);
+const saveL=()=>LS.s('aia_lessons',L),saveLogs=()=>LS.s('aia_logs',logs),saveStuds=()=>LS.s('aia_students',studs),saveProg=()=>LS.s('aia_progress',prog);
+const subs=()=>{const r=[];L.forEach(l=>{if(!r.find(x=>x.mat===l.mat))r.push({mat:l.mat,icon:l.icon,color:l.color,lang:l.lang})});return r};
+const metaOf=m=>subs().find(s=>s.mat===m)||{mat:m,icon:'📌',color:'#64748b',lang:/[\u0600-\u06FF]/.test(m)?'ar':'fr'};
+const key=()=>sess&&sess.role==='eleve'?(sess.groupe+'|'+sess.nom+'|'+sess.prenom).toLowerCase():'invite';
+const isDone=id=>!!((prog[key()]||{})[id]);
+function mark(id,v){const k=key();prog[k]=prog[k]||{};if(v)prog[k][id]=1;else delete prog[k][id];saveProg()}
+function log(a){logs.unshift({t:Date.now(),who:sess?sess.name:'Visiteur',role:sess?sess.role:'visiteur',action:a});if(logs.length>400)logs.length=400;saveLogs()}
+const fmt=t=>new Date(t).toLocaleString('fr-MA');
+const esc=s=>String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;');
+function render(){const r=$('root');if(!sess){r.innerHTML=loginHTML();return}r.innerHTML=mainHTML();if(dashTab)r.insertAdjacentHTML('beforeend',dashHTML(dashTab));progUI()}
+function setRole(x){loginRole=x;render()}
+function doStudent(){const n=$('f-nom').value.trim(),p=$('f-prenom').value.trim(),g=$('f-groupe').value;
+ if(!n||!p){alert('Remplis le nom et le prénom 😊');return}
+ sess={role:'eleve',name:p+' '+n,nom:n,prenom:p,groupe:g};LS.s('aia_session',sess);
+ let s=studs.find(x=>x.nom.toLowerCase()==n.toLowerCase()&&x.prenom.toLowerCase()==p.toLowerCase()&&x.groupe==g);
+ if(!s){s={nom:n,prenom:p,groupe:g,first:Date.now(),last:0,visits:0};studs.push(s)}s.last=Date.now();s.visits++;saveStuds();
+ log('Connexion élève ('+g+')');render()}
+function doProf(){const n=$('f-nom').value.trim(),m=$('f-mat').value,p=$('f-pass').value;
+ if(!n){alert('Entrez votre nom 😊');return}if(p!=='prof192ac'){alert('Mot de passe incorrect ❌');return}
+ sess={role:'prof',name:'Pr. '+n,mat:m};LS.s('aia_session',sess);log('Connexion prof : '+n+' — '+m);render()}
+function doOwner(){const p=$('f-pass').value;if(p!=='carizma'){alert('Mot de passe incorrect ❌');return}
+ sess={role:'owner',name:'Owner · Carizma'};LS.s('aia_session',sess);log('Connexion owner');render()}
+function logout(){if(sess)log('Déconnexion');sess=null;LS.s('aia_session',null);dashTab=null;render()}
+function toggleTheme(){const c=document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark';document.documentElement.setAttribute('data-theme',c);localStorage.setItem('aia_theme',c)}
+if(localStorage.getItem('aia_theme'))document.documentElement.setAttribute('data-theme',localStorage.getItem('aia_theme'));
+function loginHTML(){return `<div class="lw"><div class="lc">
+<img src="logo.png" onerror="this.style.display='none'"><h1>Al Inbiaat Academy</h1>
+<p class="s">Plateforme de révision · 2AC · Agadir</p>
+<div class="rt">
+<button class="${loginRole=='eleve'?'on':''}" onclick="setRole('eleve')">👤 Élève</button>
+<button class="${loginRole=='prof'?'on':''}" onclick="setRole('prof')">👨‍🏫 Prof</button>
+<button class="${loginRole=='owner'?'on':''}" onclick="setRole('owner')">🛡️ Owner</button></div>
+${loginRole=='eleve'?`<div class="lf">
+<label>Nom</label><input id="f-nom" placeholder="El Amrani">
+<label>Prénom</label><input id="f-prenom" placeholder="Youssef">
+<label>Groupe</label><select id="f-groupe">${['2AC1','2AC2','2AC3','2AC4','2AC5'].map(g=>`<option>${g}</option>`).join('')}</select>
+<button class="btn" onclick="doStudent()">🚀 Entrer</button></div>`
+:loginRole=='prof'?`<div class="lf">
+<label>Nom du professeur</label><input id="f-nom" placeholder="Ex : M. Bennani">
+<label>Matière enseignée</label><select id="f-mat">${ALLSUBJ.map(m=>`<option>${m}</option>`).join('')}</select>
+<label>Mot de passe</label><input id="f-pass" type="password" onkeydown="if(event.key=='Enter')doProf()">
+<button class="btn" onclick="doProf()">🔐 Se connecter</button><p class="hint">Vous ne gérerez que votre matière.</p></div>`
+:`<div class="lf"><label>Mot de passe (owner)</label><input id="f-pass" type="password" onkeydown="if(event.key=='Enter')doOwner()">
+<button class="btn" onclick="doOwner()">🔐 Se connecter</button><p class="hint">Accès propriétaire — contrôle total.</p></div>`}
+</div></div>`}
+function navHTML(){let h=`<button class="active" data-sub="all" onclick="selSub('all')"><span class="dot" style="background:currentColor"></span>🏠 Tout</button>`;
+ subs().forEach(s=>h+=`<button data-sub="${s.mat}" onclick="selSub('${s.mat}')"><span class="dot" style="background:${s.color}"></span>${s.icon} ${s.mat}</button>`);return h}
+function mainHTML(){return `<header><div class="top">
+ <div class="brand"><img src="logo.png" class="lg" onerror="this.style.display='none'"><div>Al Inbiaat Academy<small>2ème année collège · Agadir</small></div></div>
+ <div class="sp"></div><div class="search"><span>🔎</span><input id="q" oninput="doSearch(this.value)" placeholder="Rechercher…"></div>
+ <div class="chip">${sess.role=='eleve'?'👤 '+sess.name+' · '+sess.groupe:(sess.role=='prof'?'👨‍🏫 '+sess.name+' — '+sess.mat:'🛡️ Owner')}</div>
+ ${sess.role!='eleve'?'<button class="ib" onclick="openDash(\'lessons\')">⚙️ Dashboard</button>':''}
+ <button class="ib" onclick="toggleTheme()">🌓</button><button class="ib" onclick="logout()">🚪</button></div>
+ <div class="pw"><div class="bar"><i id="bar"></i></div><small id="ptxt"></small></div></header>
+ <div class="lay"><nav>${navHTML()}</nav><main id="content">${contentHTML()}</main></div>
+ <footer>Al Inbiaat Academy · 2AC Agadir · Bonne chance 💪</footer>`}
+function contentHTML(){return subs().map(s=>{const list=L.filter(l=>l.mat===s.mat&&(l.visible||sess.role!='eleve'));
+ return `<section class="sec" data-sub="${s.mat}" style="--c:${s.color}" dir="${s.lang=='ar'?'rtl':'ltr'}">
+ <div class="sh"><span style="font-size:1.4rem">${s.icon}</span><h2>${s.mat}</h2><span class="pill">${list.length} leçons</span></div>
+ <div class="cards">${list.map(card).join('')}</div></section>`}).join('')}
+function card(l){return `<article class="card closed" data-s="${(l.t+' '+l.mat).toLowerCase()}" id="card-${l.id}">
+ <div class="ch" onclick="tgl('${l.id}')"><span>${l.icon}</span><h3>${l.t}</h3>
+ ${!l.visible?'<span class="badge h">masquée</span>':''}${isDone(l.id)?'<span class="badge d">révisé ✓</span>':''}<span class="cv">▼</span></div>
+ <div class="bd2" dir="${l.lang=='ar'?'rtl':'ltr'}">
+ <div class="box ana">💬 ${l.intro}</div>${l.body}
+ <div class="qh">🧠 Quiz – ${l.quiz.length} questions</div>
+ ${l.quiz.map((q,i)=>`<div class="quiz"><p class="q">${i+1}. ${q.q}</p><div class="opts">${q.o.map((o,oi)=>`<button class="opt" onclick="ans(this,${oi},${q.a},'${l.id}')">${o}</button>`).join('')}</div></div>`).join('')}
+ <div class="score" id="sc-${l.id}"></div>
+ ${sess.role=='eleve'?`<button class="btn ${isDone(l.id)?'gh':''}" id="dn-${l.id}" onclick="tglDone('${l.id}')">${isDone(l.id)?'↩️ Marquer non révisé':"✅ J'ai révisé cette leçon"}</button>`:''}
+ </div></article>`}
+function tgl(id){$('card-'+id).classList.toggle('closed')}
+function ans(b,oi,a,lid){const q=b.closest('.quiz');if(q.dataset.done)return;q.dataset.done=1;
+ [...q.querySelector('.opts').children].forEach((x,k)=>{x.disabled=true;if(k==a)x.classList.add('ok')});
+ if(oi==a)q.dataset.ok=1;else b.classList.add('bad');score(lid)}
+function score(lid){const c=$('card-'+lid),t=c.querySelectorAll('.quiz').length,an=c.querySelectorAll('.quiz[data-done]').length,ok=c.querySelectorAll('.quiz[data-ok]').length;
+ if(an)$('sc-'+lid).textContent='Score : '+ok+'/'+an+' (sur '+t+' questions)';
+ if(an==t&&t>0&&sess.role=='eleve'&&!isDone(lid)){mark(lid,1);const b=$('dn-'+lid);if(b){b.textContent='↩️ Marquer non révisé';b.classList.add('gh')}progUI();log('Révision terminée : '+lid)}}
+function tglDone(id){const v=!isDone(id);mark(id,v);const b=$('dn-'+id);b.textContent=v?'↩️ Marquer non révisé':"✅ J'ai révisé cette leçon";b.classList.toggle('gh',v);
+ const h=$('card-'+id).querySelector('.ch');let bd=h.querySelector('.badge.d');if(v&&!bd){bd=document.createElement('span');bd.className='badge d';bd.textContent='révisé ✓';h.querySelector('.cv').before(bd)}else if(!v&&bd)bd.remove();
+ progUI();log('Bouton révision : '+id)}
+function selSub(id){document.querySelectorAll('#content .sec').forEach(s=>s.style.display=(id=='all'||s.dataset.sub==id)?'':'none');
+ document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('active',b.dataset.sub==id))}
+function doSearch(v){v=v.trim().toLowerCase();
+ document.querySelectorAll('#content .card').forEach(c=>c.style.display=(!v||c.dataset.s.includes(v))?'':'none');
+ document.querySelectorAll('#content .sec').forEach(s=>{s.style.display=[...s.querySelectorAll('.card')].some(c=>c.style.display!='none')?'':'none'})}
+function progUI(){if(!sess)return;const vis=L.filter(l=>l.visible||sess.role!='eleve'),p=prog[key()]||{},d=vis.filter(l=>p[l.id]).length,t=vis.length,pct=t?Math.round(d/t*100):0;
+ $('bar').style.width=pct+'%';$('ptxt').textContent='Progression : '+d+'/'+t+' leçons ('+pct+'%)'}
+function openDash(t){dashTab=t;render()}
+function closeDash(){dashTab=null;render()}
+function dashHTML(tab){const tabs=sess.role=='owner'
+ ?[['overview','📊 Vue'],['students','👥 Élèves'],['lessons','📚 Leçons'],['add','➕ Ajouter'],['import','📥 Importer'],['logs','🗄️ Journal']]
+ :[['lessons','📚 Mes leçons'],['add','➕ Ajouter'],['import','📥 Importer']];
+ return `<div class="ov"><div class="dash">
+ <div class="dh"><h2>${sess.role=='owner'?'🛡️ Dashboard — Owner':'👨‍🏫 '+sess.name+' — '+sess.mat}</h2><button class="ib" onclick="closeDash()">✕</button></div>
+ <div class="dt">${tabs.map(x=>`<button class="${tab==x[0]?'on':''}" onclick="openDash('${x[0]}')">${x[1]}</button>`).join('')}</div>
+ <div class="db">${dashBody(tab)}</div></div></div>`}
+function dashBody(t){
+ if(t=='lessons'){const mats=sess.role=='prof'?[sess.mat]:subs().map(s=>s.mat);
+  return mats.map(m=>{const s=metaOf(m),ls=L.filter(l=>l.mat===m);
+  return `<h3>${s.icon} ${m} <span style="font-size:.8rem;color:var(--mu)">(${ls.length})</span></h3>
+  <table class="tb"><tr><th>Leçon</th><th>Quiz</th><th>Visible</th><th>Actions</th></tr>
+  ${ls.map(l=>`<tr><td>${l.t}</td><td>${l.quiz.length}</td>
+  <td><label class="sw"><input type="checkbox" ${l.visible?'checked':''} onchange="vis('${l.id}',this.checked)"><i></i></label></td>
+  <td><button class="mini" onclick="addQ('${l.id}')">➕ Quiz</button><button class="mini d" onclick="delL('${l.id}')">🗑️</button></td></tr>`).join('')||'<tr><td colspan="4">Aucune leçon.</td></tr>'}</table>`}).join('')}
+ if(t=='add'){const fx=sess.role=='prof';
+  return `<div class="form"><label>Matière</label>${fx?`<input value="${sess.mat}" disabled>`:`<select id="a-mat" onchange="document.getElementById('a-newmat').style.display=this.value=='__'?'':'none'">${subs().map(s=>`<option>${s.mat}</option>`).join('')}<option value="__">➕ Nouvelle matière…</option></select><input id="a-newmat" placeholder="Nouvelle matière" style="display:none">`}
+  <label>Titre</label><input id="a-titre"><label>Introduction</label><input id="a-intro">
+  <label>Contenu (HTML)</label><textarea id="a-body" rows="5"></textarea>
+  <label>Quiz — une ligne : <code>Question | c1 | c2 | c3 | c4 | n° (0-3)</code></label><textarea id="a-quiz" rows="5"></textarea>
+  <button class="btn" onclick="addL()">➕ Ajouter</button></div>`}
+ if(t=='import')return `<div class="form">
+  <p>Colle un <b>pack JSON</b> puis Importer.${sess.role=='prof'?' Les leçons iront dans <b>'+sess.mat+'</b>.':''}</p>
+  <textarea id="imp" rows="9" placeholder='[{"mat":"Mathématiques","t":"...","intro":"...","body":"...","quiz":[{"q":"...","o":["a","b","c","d"],"a":0}]}]'></textarea>
+  <button class="btn" onclick="doImport()">📥 Importer</button>
+  <button class="btn gh" onclick="doExport()">📤 Exporter mes leçons</button></div>`;
+ if(t=='overview'){const hid=L.filter(l=>!l.visible).length,q=L.reduce((a,l)=>a+l.quiz.length,0);
+  return `<div class="stats"><div class="stat"><b>${L.length}</b><span>Leçons</span></div><div class="stat"><b>${hid}</b><span>Masquées</span></div>
+  <div class="stat"><b>${q}</b><span>Questions</span></div><div class="stat"><b>${studs.length}</b><span>Élèves</span></div><div class="stat"><b>${logs.length}</b><span>Événements</span></div></div>
+  <button class="btn" onclick="resetC()">♻️ Réinitialiser</button> <button class="btn dg" onclick="clearLogs()">🧹 Vider le journal</button>`}
+ if(t=='students')return studs.length?`<table class="tb"><tr><th>Nom</th><th>Prénom</th><th>Groupe</th><th>Visites</th><th>Dernière</th></tr>
+  ${studs.map(s=>`<tr><td>${s.nom}</td><td>${s.prenom}</td><td>${s.groupe}</td><td>${s.visits}</td><td>${fmt(s.last)}</td></tr>`).join('')}</table>`:'<p>Aucun élève.</p>';
+ if(t=='logs')return logs.length?`<table class="tb"><tr><th>Date</th><th>Utilisateur</th><th>Rôle</th><th>Action</th></tr>
+  ${logs.slice(0,200).map(l=>`<tr><td>${fmt(l.t)}</td><td>${esc(l.who)}</td><td>${l.role}</td><td>${esc(l.action)}</td></tr>`).join('')}</table>`:'<p>Aucune activité.</p>';
+ return ''}
+function vis(id,v){const l=L.find(x=>x.id==id);l.visible=v;saveL();log('Visibilité '+l.t+' → '+(v?'visible':'masquée'))}
+function delL(id){const i=L.findIndex(x=>x.id==id);if(i<0)return;if(!confirm('Supprimer « '+L[i].t+' » ?'))return;log('Leçon supprimée : '+L[i].t);L.splice(i,1);saveL();render()}
+function addQ(id){const l=L.find(x=>x.id==id);if(l.mat!==sess.mat&&sess.role=='prof')return;const q=prompt('Question ?');if(!q)return;const o=[];
+ for(let i=0;i<4;i++){const c=prompt('Choix '+(i+1));if(!c)return;o.push(c)}
+ const a=parseInt(prompt('N° de la bonne réponse (0-3)','0'),10)||0;l.quiz.push({q,o,a});saveL();log('Quiz ajouté à '+l.t);alert('Question ajoutée ✅');render()}
+function addL(){let m=sess.role=='prof'?sess.mat:($('a-mat').value=='__'?$('a-newmat').value.trim():$('a-mat').value);
+ const t=$('a-titre').value.trim(),i=$('a-intro').value.trim(),b=$('a-body').value.trim();
+ if(!m||!t){alert('Matière et titre obligatoires');return}
+ const quiz=$('a-quiz').value.split('\n').map(x=>x.trim()).filter(Boolean).map(x=>{const p=x.split('|').map(y=>y.trim());return {q:p[0],o:[p[1],p[2],p[3],p[4]],a:parseInt(p[5]||'0',10)||0}}).filter(q=>q.q&&q.o.every(Boolean));
+ const md=metaOf(m);L.push({id:'u'+Date.now(),mat:m,icon:md.icon,color:md.color,lang:md.lang,t,intro:i||'Bonne révision !',body:b||'<p>…</p>',quiz,visible:true});
+ saveL();log('Leçon ajoutée : '+t+' ('+m+')');alert('Leçon ajoutée ✅');openDash('lessons')}
+function doImport(){const txt=$('imp').value.trim();if(!txt)return alert('Colle d abord un pack JSON');
+ let arr;try{arr=JSON.parse(txt)}catch(e){return alert('JSON invalide ❌ : '+e.message)}
+ if(!Array.isArray(arr))return alert('Le JSON doit être un tableau [ … ]');
+ let n=0;arr.forEach((x,idx)=>{const m=sess.role=='prof'?sess.mat:(x.mat||x.m||'Divers');const md=metaOf(m);
+  const ex=L.find(l=>l.mat===m&&l.t===x.t);
+  const obj={id:ex?ex.id:'i'+Date.now()+'_'+idx,mat:m,icon:md.icon,color:md.color,lang:md.lang,t:x.t,intro:x.intro||'Bonne révision !',body:x.body||'<p>…</p>',
+   quiz:(x.quiz||[]).map(q=>({q:q.q,o:q.o,a:q.a})),visible:true};
+  if(ex)Object.assign(ex,obj);else L.push(obj);n++});
+ saveL();log('Import de '+n+' leçon(s)');alert(n+' leçon(s) importée(s) ✅');openDash('lessons')}
+function doExport(){const d=sess.role=='prof'?L.filter(l=>l.mat===sess.mat):L;
+ $('imp').value=JSON.stringify(d.map(l=>({mat:l.mat,t:l.t,intro:l.intro,body:l.body,quiz:l.quiz})),null,1);
+ alert('Copié dans la zone — sélectionne et Ctrl+C')}
+function resetC(){if(!confirm('Réinitialiser les leçons de base ? (tes leçons ajoutées restent)'))return;L=seed().concat(L.filter(l=>l.id[0]=='u'));saveL();render()}
+function clearLogs(){if(confirm('Vider le journal ?')){logs=[];saveLogs();render()}}
+render();
+</script></body></html>
